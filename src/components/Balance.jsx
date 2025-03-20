@@ -1,16 +1,18 @@
-const Balance = (props) => {
+const Balance = ({cash, setCash, error, setError}) => {
+
+  function handleAddCash() {
+    if(error === "You ran out of cash!"){
+      setError("")
+    }
+    setCash((currCash) => {
+      return currCash + 1;
+    });
+  }
   return (
     <>
-      <h2>Your Cash Balance: £{props.cash}</h2>
+      <h2>Your Cash Balance: £{cash}</h2>
       <button
-        onClick={() => {
-          props.setCash((currCash) => {
-            return currCash + 1;
-          });
-        }}
-      >
-        Add Cash
-      </button>
+        onClick={handleAddCash}>Add Cash</button>
     </>
   );
 };

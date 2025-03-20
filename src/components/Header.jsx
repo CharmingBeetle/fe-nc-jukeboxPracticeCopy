@@ -1,7 +1,7 @@
-const Header = (props) => {
+const Header = ({playListTitle}) => {
   return (
     <header>
-      <h1>{props.playListTitle}</h1>
+      <h1>{playListTitle}</h1>
     </header>
   );
 };

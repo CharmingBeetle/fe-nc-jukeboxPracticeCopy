@@ -44,7 +44,7 @@ const App = () => {
         "https://open.spotify.com/embed/track/029NqmIySn1kOY305AAhxT?utm_source=generator",
     },
   ];
-  const [currentlyPlaying, setSong] = useState(0);
+  const [error, setError] = useState("")
   const [cash, setCash] = useState(0);
   const [playCounts, setCounts] = useState({
     Dreams: 10,
@@ -57,13 +57,13 @@ const App = () => {
       <Header playListTitle={playListTitle} />
       <Songs
         songs={songs}
-        currentlyPlaying={currentlyPlaying}
-        setSong={setSong}
         setCounts={setCounts}
         setCash={setCash}
+        setError={setError}
+        error={error}
       />
       <PlayCounts playCounts={playCounts} />
-      <Balance cash={cash} setCash={setCash} />
+      <Balance cash={cash} setCash={setCash} setError={setError} error={error} />
     </div>
   );
 };
