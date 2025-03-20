@@ -1,5 +1,11 @@
+import { useState } from "react";
+import Header from "./components/Header";
+import Songs from "./components/Songs";
+import PlayCounts from "./components/PlayCounts";
+import Balance from "./components/Balance";
+
 const App = () => {
-  const playListTitle = "My cool playlist";
+  const playListTitle = "My awesome playlist";
   const songs = [
     {
       id: 1,
@@ -38,17 +44,26 @@ const App = () => {
         "https://open.spotify.com/embed/track/029NqmIySn1kOY305AAhxT?utm_source=generator",
     },
   ];
-  const playCounts = {
+  const [currentlyPlaying, setSong] = useState(0);
+  const [cash, setCash] = useState(0);
+  const [playCounts, setCounts] = useState({
     Dreams: 10,
     "Enter Sandman": 5,
     "Don't stop me now": 8,
     Sledgehammer: 11,
-  };
-  const currentlyPlaying = 0;
-
+  });
   return (
     <div className="App">
-      <h1>React Intro</h1>
+      <Header playListTitle={playListTitle} />
+      <Songs
+        songs={songs}
+        currentlyPlaying={currentlyPlaying}
+        setSong={setSong}
+        setCounts={setCounts}
+        setCash={setCash}
+      />
+      <PlayCounts playCounts={playCounts} />
+      <Balance cash={cash} setCash={setCash} />
     </div>
   );
 };
