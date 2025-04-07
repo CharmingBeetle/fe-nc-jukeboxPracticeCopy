@@ -78,7 +78,6 @@ const Songs = ({songs, setCounts, setCash, error, setError}) => {
         <p>{currentSong.artist}</p>
         <img src={currentSong.albumCover}></img>
         <br></br>
-        ///
         <iframe src={currentSong.previewURL} title="Spotify Preview"></iframe>
         <button onClick={(handleNextSongBtn)}>⏭️</button>
         <p>{error}</p>

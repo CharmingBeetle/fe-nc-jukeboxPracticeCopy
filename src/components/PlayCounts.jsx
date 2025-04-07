@@ -16,7 +16,7 @@ const PlayCounts = ({playCounts}) => {
  
 
   const sortedSongs = listArr.sort(songSort)
-  console.log(listArr[0].slice(-1))
+  console.log(sortedSongs)
   return (
     <>
       <h2>Play Counts</h2>
